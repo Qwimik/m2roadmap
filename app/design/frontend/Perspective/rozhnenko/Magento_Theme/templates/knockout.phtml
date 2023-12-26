@@ -1,0 +1,19 @@
+<?php
+/**
+ * @var $block Magento\Framework\View\Element\Template
+ */
+?>
+
+<div id="knockout">
+    <span data-bind="text: text"></span>
+</div>
+
+<script>
+    require(['knockout'], ko => {
+        const viewModel = function () {
+            this.text = 'default text';
+        };
+
+        ko.applyBindings(new viewModel(), document.getElementById('knockout'));
+    })
+</script>
