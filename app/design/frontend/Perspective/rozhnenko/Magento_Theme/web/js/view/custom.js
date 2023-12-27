@@ -3,15 +3,19 @@ define(['uiComponent', 'ko'], (uiComponent, ko) => {
 
     return uiComponent.extend({
         defaults: {
-            text: ko.observable('default text')
+            isActive: ko.observable(false)
         },
 
         initialize() {
             this._super();
 
-            setTimeout(() => {
-                this.text('---update text---')
-            }, 2000)
+            // setTimeout(() => {
+            //     this.text('---update text---')
+            // }, 2000)
+        },
+
+        toggleState() {
+            this.isActive(!this.isActive());
         }
     });
 })
