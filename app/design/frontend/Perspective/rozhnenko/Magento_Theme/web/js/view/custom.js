@@ -3,15 +3,12 @@ define(['uiComponent', 'ko'], (uiComponent, ko) => {
 
     return uiComponent.extend({
         defaults: {
+            template: 'Magento_Theme/custom',
             isActive: ko.observable(false)
         },
 
         initialize() {
             this._super();
-
-            // setTimeout(() => {
-            //     this.text('---update text---')
-            // }, 2000)
         },
 
         toggleState() {
