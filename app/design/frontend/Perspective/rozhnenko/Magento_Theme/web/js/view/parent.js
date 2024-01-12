@@ -4,7 +4,12 @@ define(['uiCollection', 'uiLayout', 'uiEvents'], (uiCollection, uiLayout, uiEven
 
     return uiCollection.extend({
         defaults: {
-            template: 'Magento_Theme/parent'
+            template: 'Magento_Theme/parent',
+            // provider: 'custom',
+            // test: '${ $.provider }:data.items',
+            // ignoreTmpls: {
+            //     test: true,
+            // }
         },
 
         initialize() {

@@ -3,6 +3,9 @@
     <referenceContainer name="content">
 <!--        <block name="ui.component.block" template="Magento_Theme::ui-component.phtml"/>-->
 <!--        <block name="ui.component.block" template="Magento_Theme::uiComponent2.phtml"/>-->
-        <block name="ui.component.block" template="Magento_Theme::uiParentChild.phtml"/>
+<!--        <block name="ui.component.block" template="Magento_Theme::uiParentChild.phtml"/>-->
+<!--        <block name="ui.component.block" template="Magento_Theme::uiDependencies.phtml"/>-->
+<!--        <block name="ui.component.block" template="Magento_Theme::uiStatefull.phtml"/>-->
+        <block name="ui.component.block" template="Magento_Theme::uiDecomposition.phtml"/>
     </referenceContainer>
 </page>
