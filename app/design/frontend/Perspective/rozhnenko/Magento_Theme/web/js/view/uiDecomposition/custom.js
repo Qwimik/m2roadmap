@@ -1,4 +1,7 @@
-define(['uiElement'], uiElement => {
+define(['uiElement',
+        'Magento_Theme/js/model/uiDecomposition/custom',
+        'Magento_Theme/js/action/uiDecomposition/custom'
+], (uiElement, model, action) => {
     return uiElement.extend({
         defaults: {
             template: 'Magento_Theme/uiDecomposition/custom',
@@ -17,8 +20,13 @@ define(['uiElement'], uiElement => {
             return this;
         },
 
-        getData() {},
+        getData() {
+            this.items = model.get();
+        },
 
-        pushData() {}
+        pushData() {
+            action(this.discountCode);
+        }
     });
 });
+// в view прийнято, тільки рендерити дані
