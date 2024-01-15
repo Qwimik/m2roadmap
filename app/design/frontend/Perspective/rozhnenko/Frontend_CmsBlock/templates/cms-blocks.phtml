@@ -1,0 +1,43 @@
+<?php
+///**
+// * @var Magento\Framework\View\Element\Template $block
+// * @var Magento\Framework\Escaper $escaper
+// * */
+//
+//$cmsBlocks = [];
+//$layout = $block->getLayout();
+//$children = $block->getChildNames();
+//foreach ($children as $child) {
+//    $alias = $layout->getElementAlias($child);
+//    $cmsBlockId = $block->getChildData($alias, 'block_id');
+//
+//    if(!$cmsBlockId) {
+//        continue;
+//    }
+//
+//    $html = $layout->renderElement($child);
+//    if(!$html) {
+//        continue;
+//    }
+//
+//    $cmsBlocks[$cmsBlockId] = $html;
+//}
+//
+//$cmsBlocks = json_encode($cmsBlocks);
+//?>
+<!--<div data-bind="scope: 'cmsBlocksProvider'"></div>-->
+<!--<script type="text/x-magento-init">-->
+<!--    {-->
+<!--        "*": {-->
+<!--            "Magento_Ui/js/core/app": {-->
+<!--                "components": {-->
+<!--                    "cmsBlocksProvider": {-->
+<!--                        "component": "Frontend_CmsBlock/js/model/cms-block-provider",-->
+<!--                        "deps": ["checkoutProvider"],-->
+<!--                        "cmsBlocks": "--><?php //= $escaper->escapeJs($cmsBlocks) ?><!--"-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
