@@ -6,6 +6,6 @@
 <!--        <block name="ui.component.block" template="Magento_Theme::uiParentChild.phtml"/>-->
 <!--        <block name="ui.component.block" template="Magento_Theme::uiDependencies.phtml"/>-->
 <!--        <block name="ui.component.block" template="Magento_Theme::uiStatefull.phtml"/>-->
-        <block name="ui.component.block" template="Magento_Theme::uiDecomposition.phtml"/>
+<!--        <block name="ui.component.block" template="Magento_Theme::uiDecomposition.phtml"/>-->
     </referenceContainer>
 </page>
