@@ -2,9 +2,6 @@
 <!-- Variant CMS Block in checkout without backend -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="checkout.custom.cms.block" destination="checkout.cms.blocks"/>
-        <move element="checkout.custom.cms.block2" destination="checkout.cms.blocks"/>
-
         <block class="Magento\Cms\Block\Block" name="checkout.custom.cms.block">
             <arguments>
                 <argument name="block_id" xsi:type="string">checkout_custom</argument>
@@ -15,6 +12,9 @@
                 <argument name="block_id" xsi:type="string">checkout_block_2</argument>
             </arguments>
         </block>
+
+        <move element="checkout.custom.cms.block" destination="checkout.cms.blocks"/>
+        <move element="checkout.custom.cms.block2" destination="checkout.cms.blocks"/>
 
         <referenceBlock name="checkout.root">
             <arguments>
