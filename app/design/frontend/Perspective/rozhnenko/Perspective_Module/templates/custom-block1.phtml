@@ -1,0 +1,9 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ */
+?>
+<p>1. Text from custom-block1.phtml</p>
+
+<!-- Приклад setTemplate() в phtml -->
+<?= $block->setTemplate('Perspective_Module::custom-block2.phtml')->toHtml() ?>

@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block;
+ */
+
+// Приклад отримання переданих аргумнтів з XML:
+$customText = $block->getData('custom_text');
+$customNumber = $block->getData('custom_number');
+$customBoolean = $block->getData('custom_boolean');
+$customArray = $block->getData('custom_array');
+?>
+
+<p>2. Text from custom-block2.phtml</p>
+<?php if($block->hasData('custom_text')): ?>
+    <ul>
+        <li><?= $customText ?></li>
+        <li><?= $customNumber ?></li>
+        <li><?= $customBoolean ?></li>
+        <li>Array
+            <ul>
+                <li><?= 'key1: ' . $customArray['key1'] ?></li>
+                <li><?= 'key2: ' . $customArray['key2'] ?></li>
+            </ul>
+        </li>
+    </ul>
+<?php endif; ?>
