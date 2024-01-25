@@ -10,3 +10,4 @@
 /var/*
 /vendor/*
 auth.json
+app/etc/hyva-themes.json
