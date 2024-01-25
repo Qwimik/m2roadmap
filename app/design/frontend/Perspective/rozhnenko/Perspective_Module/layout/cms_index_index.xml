@@ -1,56 +1,13 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <!-- Пункт 1.1 -->
-        <!-- Звертаємось до існуючого контейнеру "content",за допомогою referenceContainer, щоб додати власний контент -->
         <referenceContainer name="content">
-            <!-- Створюємо новий блок та додаємо йому власний phtml темплейт -->
-             <block class="Magento\Framework\View\Element\Template" name="custom.block1" template="Perspective_Module::custom-block1.phtml"/>
-
-            <!-- Для перевизначення темплейту в блоці можна - звернутись до існуючого блоку(name) та змінити template: -->
-<!--            <referenceBlock name="custom.block1" template="Perspective_Module::custom-block2.phtml"/>-->
-            <!-- або за допомогою arguments -->
-<!--            <referenceBlock name="custom.block1">-->
-<!--                <arguments>-->
-<!--                    <argument name="template" xsi:type="string">Perspective_Module::custom-block2.phtml</argument>-->
-<!--                </arguments>-->
-<!--            </referenceBlock>-->
-            <!-- Наступний метод вже deprecated(setTemplate), його не використовувати: -->
-<!--            <referenceBlock name="custom.block1">-->
-<!--                <action method="setTemplate">-->
-<!--                    <argument name="template" xsi:type="string">Perspective_Module::custom-block2.phtml</argument>-->
-<!--                </action>-->
-<!--            </referenceBlock>-->
-
-            <!-- Також темплейт можна задати/перевизначити всередені phtml файлу, приклад в Perspective_Module/templates/custom-block1.phtml -->
+            <!-- Створюємо блок, передаємо php клас до аргументу  -->
+            <block name="custom.block3" template="Perspective_Module::custom-block3.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Perspective\Module\Model\ViewModel</argument>
+                </arguments>
+            </block>
         </referenceContainer>
-
-        <!-- Пункт 1.2 -->
-        <container name="custom.container1" htmlTag="div" htmlClass="custom-container1">
-            <block class="Magento\Framework\View\Element\Template" name="custom.block1.copy" template="Perspective_Module::custom-block1.phtml"/>
-            <block class="Magento\Framework\View\Element\Template" name="custom.block2" template="Perspective_Module::custom-block2.phtml"/>
-        </container>
-
-        <!-- Приклади використання reference, remove, move, cacheable -->
-        <referenceBlock name="custom.block1.copy" remove="true"/>
-<!--        <referenceBlock name="custom.block2" cacheable="false"/>-->
-        <move element="custom.container1" destination="content" before="custom.block1"/>
-        <!-- Використання cacheable не рекомендується, так як 1 блок з cacheable="false" вимикає кешування всієї сторінки,
-            це може впливати негативно на спадковість, производительность та інші непередбачуванні поведінки-->
-
-        <!-- Пункт 1.3 -->
-        <!-- Приклад, як передавати аргументи у phtml темплейт -->
-        <referenceBlock name="custom.block2">
-            <arguments>
-                <argument name="custom_text" xsi:type="string">Custom text from XML.</argument>
-                <argument name="custom_number" xsi:type="number">12345</argument>
-                <argument name="custom_boolean" xsi:type="boolean">true</argument>
-                <argument name="custom_array" xsi:type="array">
-                    <item name="key1" xsi:type="string">value 1</item>
-                    <item name="key2" xsi:type="string">value 2</item>
-                </argument>
-            </arguments>
-        </referenceBlock>
     </body>
 </page>
-

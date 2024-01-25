@@ -1,0 +1,23 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+
+// Оголошення змінної $viewModel
+$viewModel = $block->getViewModel();
+?>
+
+<!-- ViewModel - це PHP-клас, який надає дані для відображення в темплейтах.
+    Вони використовуються для виокремлення логіки з блоків та можуть містити логіку для обробки та отримання даних. -->
+
+<!-- Використання ескейперів -->
+<h2 class="<?= $escaper->escapeHtmlAttr('title') ?>"><?= $escaper->escapeHtml(__('3. ViewModel')) ?></h2>
+<!-- Використання методу класу ViewModel -->
+<p><?= $escaper->escapeHtml($viewModel->getTitle()); ?></p>
+
+<?php
+// Відмінність ViewModel від класів, полягає в відокремленні логіки отримання данних та бізнес логіки.
+// Також ViewModel більш придатні для повторного використання та компонування.
+?>
+

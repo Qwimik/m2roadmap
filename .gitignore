@@ -9,3 +9,4 @@
 /setup/*
 /var/*
 /vendor/*
+auth.json
