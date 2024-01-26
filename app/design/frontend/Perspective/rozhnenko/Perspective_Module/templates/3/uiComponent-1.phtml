@@ -1,0 +1,18 @@
+<div data-bind="scope: 'custom-scope'">
+    <span data-bind="text: text">
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "custom-scope": {
+                        "component": "uiComponent",
+                        "text": "text"
+                    }
+                }
+            }
+        }
+    }
+</script>
