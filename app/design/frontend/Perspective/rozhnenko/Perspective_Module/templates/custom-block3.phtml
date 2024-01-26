@@ -10,6 +10,7 @@ $viewModel = $block->getViewModel();
 // viewModels з hyva
 /** @var \Hyva\Theme\Model\ViewModelRegistry $viewModels */
 $viewModelHyva = $viewModels->require(\Perspective\Module\Model\ViewModel::class);
+
 ?>
 
 <!-- ViewModel - це PHP-клас, який надає дані для відображення в темплейтах.
@@ -22,6 +23,9 @@ $viewModelHyva = $viewModels->require(\Perspective\Module\Model\ViewModel::class
 <hr/>
 <!-- Використання методу класу ViewModel з hyva -->
 <p><?= $escaper->escapeHtml($viewModel->getTitle()) . $escaper->escapeHtml(__(' from hyva viewModelHyva')) ?></p>
+<hr/>
+<!-- Використання методу класу ViewModel з magento2 action method в xml але коли php class implements BlockInterface  -->
+<!--<p>--><?php //= $escaper->escapeHtml($childBlock->getTitle()) . $escaper->escapeHtml(__(' from magento2 action method in xml')) ?><!--</p>-->
 
 
 

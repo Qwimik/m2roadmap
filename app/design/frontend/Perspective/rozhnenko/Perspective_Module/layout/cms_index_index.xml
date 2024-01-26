@@ -3,11 +3,15 @@
     <body>
         <referenceContainer name="content">
             <!-- Створюємо блок, передаємо php клас до аргументу в magento 2 core -->
-            <block name="custom.block3" template="Perspective_Module::custom-block3.phtml">
-                <arguments>
-                    <argument name="view_model" xsi:type="object">Perspective\Module\Model\ViewModel</argument>
-                </arguments>
-            </block>
+<!--            <block name="custom.block3" template="Perspective_Module::custom-block3.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="view_model" xsi:type="object">Perspective\Module\Model\ViewModel</argument>-->
+<!--                </arguments>-->
+                <!-- Працюватиме, якщо класс буде реалізувати інтерфейс BlockInterface (а не ArgumentInterface як зараз) -->
+<!--                <block name="custom.child.block3" class="Perspective\Module\Model\ViewModel">-->
+<!--                    <action method="getTitle"/>-->
+<!--                </block>-->
+<!--            </block>-->
         </referenceContainer>
     </body>
 </page>
