@@ -4,8 +4,12 @@
  * @var \Magento\Framework\Escaper $escaper
  */
 
-// Оголошення змінної $viewModel
+// Оголошення змінної $viewModel для magento2
 $viewModel = $block->getViewModel();
+
+// viewModels з hyva
+/** @var \Hyva\Theme\Model\ViewModelRegistry $viewModels */
+$viewModelHyva = $viewModels->require(\Perspective\Module\Model\ViewModel::class);
 ?>
 
 <!-- ViewModel - це PHP-клас, який надає дані для відображення в темплейтах.
@@ -14,7 +18,12 @@ $viewModel = $block->getViewModel();
 <!-- Використання ескейперів -->
 <h2 class="<?= $escaper->escapeHtmlAttr('title') ?>"><?= $escaper->escapeHtml(__('3. ViewModel')) ?></h2>
 <!-- Використання методу класу ViewModel -->
-<p><?= $escaper->escapeHtml($viewModel->getTitle()); ?></p>
+<p><?= $escaper->escapeHtml($viewModel->getTitle()) . $escaper->escapeHtml(__(' from magento2 viewModel')) ?></p>
+<hr/>
+<!-- Використання методу класу ViewModel з hyva -->
+<p><?= $escaper->escapeHtml($viewModel->getTitle()) . $escaper->escapeHtml(__(' from hyva viewModelHyva')) ?></p>
+
+
 
 <?php
 // Відмінність ViewModel від класів, полягає в відокремленні логіки отримання данних та бізнес логіки.

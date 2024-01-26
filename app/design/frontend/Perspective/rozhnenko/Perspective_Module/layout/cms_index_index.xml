@@ -2,12 +2,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <!-- Створюємо блок, передаємо php клас до аргументу  -->
-<!--            <block name="custom.block3" template="Perspective_Module::custom-block3.phtml">-->
-<!--                <arguments>-->
-<!--                    <argument name="view_model" xsi:type="object">Perspective\Module\Model\ViewModel</argument>-->
-<!--                </arguments>-->
-<!--            </block>-->
+            <!-- Створюємо блок, передаємо php клас до аргументу в magento 2 core -->
+            <block name="custom.block3" template="Perspective_Module::custom-block3.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Perspective\Module\Model\ViewModel</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
