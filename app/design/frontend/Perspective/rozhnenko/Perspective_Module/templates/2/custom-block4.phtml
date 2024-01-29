@@ -1,0 +1,19 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+
+// viewModels з hyva
+/** @var \Hyva\Theme\Model\ViewModelRegistry $viewModels */
+$viewModelHyva = $viewModels->require(\Perspective\Module\Model\ViewModelHyva::class);
+?>
+
+<h2>4. ViewModel Hyva</h2>
+<!-- Використання методу класу ViewModel з hyva -->
+<p><?= $escaper->escapeHtml($viewModelHyva->getTitleHyva()) . $escaper->escapeHtml(__(' from hyva viewModelHyva')) ?></p>
+
+<?php
+// Відмінність ViewModel від класів, полягає в відокремленні логіки отримання данних та бізнес логіки.
+// Також ViewModel більш придатні для повторного використання та компонування.
+?>
