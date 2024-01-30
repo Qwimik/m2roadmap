@@ -54,7 +54,7 @@
             <!-- ========================================================================================================= -->
             <!-- ========================================================================================================= -->
             <!-- 2. Основи PHP, необхідні фронтенд розробнику при работі з М2 -->
-            <!-- Створюємо блок, передаємо php клас до аргументу в magento 2 core -->
+            <!-- Створюємо блок, передаємо php клас до аргументу в magento 2 -->
             <block name="custom.block3" template="Perspective_Module::2/custom-block3.phtml">
                 <arguments>
                     <argument name="view_model" xsi:type="object">Perspective\Module\Model\ViewModel</argument>
@@ -64,15 +64,7 @@
             <block name="line2" template="Perspective_Module::elements/line.phtml"/>
             <!-- ViewModel in Hyva theme -->
             <block name="custom.block4" template="Perspective_Module::2/custom-block4.phtml"/>
-
-            <block name="line3" template="Perspective_Module::elements/line.phtml"/>
-            <!-- ========================================================================================================= -->
-            <!-- ========================================================================================================= -->
-            <!-- 3. Ознайомитись з UI Components.  -->
-            <block name="uiComponent.block1" template="Perspective_Module::3/uiComponent-1.phtml"/>
-
         </referenceContainer>
-
 
         <!-- Приклади використання reference, remove, move, cacheable -->
         <referenceBlock name="custom.block1.copy" remove="true"/>
@@ -80,9 +72,9 @@
         <referenceBlock name="content-1" remove="true"/>
         <referenceBlock name="slider-1" remove="true"/>
         <referenceBlock name="slider-2" remove="true"/>
-        <!--            <referenceBlock name="custom.block2" cacheable="false"/>-->
-        <!-- Використання cacheable не рекомендується, так як 1 блок з cacheable="false" вимикає кешування всієї сторінки,
-            це може впливати негативно на спадковість, производительность та інші непередбачуванні поведінки-->
+<!--        <referenceBlock name="custom.block2" cacheable="false"/>-->
+<!--        Використання cacheable не рекомендується, так як 1 блок з cacheable="false" вимикає кешування всієї сторінки -->
+<!--        це може впливати негативно на спадковість, производительность та інші непередбачуванні поведінки-->
         <move element="custom.container1" destination="content" before="custom.block1"/>
     </body>
 </page>
