@@ -5,8 +5,9 @@
             <!-- ========================================================================================================= -->
             <!-- ========================================================================================================= -->
             <!-- 3. Ознайомитись з UI Components.  -->
-            <block name="uiComponent.block1" template="Perspective_Module::3/uiComponent1.phtml"/>
-            <block name="line0" template="Perspective_Module::elements/line.phtml"/>
+            <block name="uiComponent.block1" template="Perspective_Module::3/uiComponents.phtml">
+                <block name="line" template="Perspective_Module::elements/line.phtml"/>
+            </block>
         </referenceContainer>
     </body>
 </page>

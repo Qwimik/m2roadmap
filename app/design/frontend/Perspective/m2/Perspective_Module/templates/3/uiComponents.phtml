@@ -1,0 +1,43 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ */
+?>
+
+<div data-bind="scope: 'uiComponent1'">
+    <span data-bind="text: text">uiComponent1 is loading...</span>
+</div>
+<?= $block->getChildHtml('line') ?>
+<div data-bind="scope: 'uiComponent2'">
+    <!-- ko template: getTemplate() -->uiComponent2 will already rush to this place <!-- /ko -->
+</div>
+<?= $block->getChildHtml() ?>
+<div data-bind="scope: 'uiComponent3'">
+    <!-- ko template: getTemplate() -->uiComponent3 is loading...... <!-- /ko -->
+</div>
+
+<!-- Приклади перекладу через байдінги -->
+<!--<div data-bind="scope: 'uiComponent1'">-->
+<!--    <span data-bind="i18n: 'translated text'"></span>-->
+<!--    <span data-bind="text: $t('translated %1 text').replace('%1', customVar)"></span>-->
+<!--</div>-->
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "uiComponent1": {
+                        "component": "Perspective_Module/js/view/uiComponent1"
+                    },
+                    "uiComponent2": {
+                        "component": "Perspective_Module/js/view/uiComponent2"
+                    },
+                    "uiComponent3": {
+                        "component": "Perspective_Module/js/view/uiComponent3"
+                    }
+                }
+            }
+        }
+    }
+</script>

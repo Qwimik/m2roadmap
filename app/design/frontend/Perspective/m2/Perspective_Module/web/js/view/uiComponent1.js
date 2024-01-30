@@ -1,7 +1,7 @@
-define(['uiComponent', 'ko'], (uiComponent, ko) => {
+define(['uiComponent', 'mage/translate'], (uiComponent, $t) => {
     return uiComponent.extend({
         defaults: {
-            text: 'text from uiComponent1.js'
+            text: $t('text from uiComponent1.js')
         },
 
         initialize() {

@@ -1,0 +1,7 @@
+<p data-bind="if: isActive" style="color: forestgreen">is active</p>
+<p data-bind="ifnot: isActive" style="color: darkred">is not active</p>
+<p data-bind="if: !isActive()" style="color: darkred">is not active</p>
+<p data-bind="text: text"></p>
+<ul data-bind="foreach: items">
+    <li data-bind="text: `${data} ${$index + 1}`"></li>
+</ul>
