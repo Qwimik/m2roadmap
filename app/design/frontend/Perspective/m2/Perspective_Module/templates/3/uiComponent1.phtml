@@ -1,0 +1,17 @@
+<div data-bind="scope: 'uiComponent1'">
+    <span data-bind="text: text">Loading...</span>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "uiComponent1": {
+                        "component": "Perspective_Module/js/view/uiComponent1"
+                    }
+                }
+            }
+        }
+    }
+</script>
