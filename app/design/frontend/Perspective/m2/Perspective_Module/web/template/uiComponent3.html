@@ -1,7 +1,13 @@
-<p data-bind="if: isActive" style="color: forestgreen">is active</p>
-<p data-bind="ifnot: isActive" style="color: darkred">is not active</p>
-<p data-bind="if: !isActive()" style="color: darkred">is not active</p>
-<p data-bind="text: text"></p>
-<ul data-bind="foreach: items">
-    <li data-bind="text: `${data} ${$index + 1}`"></li>
-</ul>
+<div>
+    <h2>uiComponent3:</h2>
+    <p>"if: isActive": <span data-bind="if: isActive" style="color: forestgreen">is active</span></p>
+    <p>"ifnot: isActive": <span data-bind="ifnot: isActive" style="color: darkred">is not active</span></p>
+<!--    Для першого прикладу з використанням функціональних обсервів, нативних у knockout-->
+<!--    <p>"if: !isActive()": <span data-bind="if: !isActive()" style="color: darkred">is not active</span></p>-->
+    <p>"if: !isActive": <span data-bind="if: !isActive" style="color: darkred">is not active</span></p>
+    <p>"text": <span data-bind="text: text"></span></p>
+    <p>"foreach: items":</p>
+    <ul data-bind="foreach: items">
+        <li data-bind="text: `${$data} ${$index() + 1}`"></li>
+    </ul>
+</div>

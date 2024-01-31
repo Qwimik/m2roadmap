@@ -1,6 +1,10 @@
-<button data-bind="click: toggleState">Click me! :)</button>
-<!-- ko if: isActive -->
-<div data-bind="mageInit: {'Perspective_Module/js/uiComponent2helper': {}}">
-    <span>O, hello! Click again and I'll disappear.</span>
+<div>
+    <h2>uiComponent2:</h2>
+    <button data-bind="click: toggleState">Click me! :)</button>
+    <!-- ko if: isActive -->
+    <div data-bind="mageInit: {'Perspective_Module/js/uiComponent2helper': {}}">
+        <span>O, hello! Click again and I'll disappear.</span>
+    </div>
+    <!-- /ko -->
 </div>
-<!-- /ko -->
+

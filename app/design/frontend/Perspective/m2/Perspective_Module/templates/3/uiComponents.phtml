@@ -3,18 +3,25 @@
  * @var Magento\Framework\View\Element\Template $block
  */
 ?>
+<div>
+    <div data-bind="scope: 'uiComponent1'">
+        <!-- ko template: getTemplate() -->uiComponent1 is loading...<!-- /ko -->
+    </div>
+    <?= $block->getChildHtml('line') ?>
+    <div data-bind="scope: 'uiComponent2'">
+        <!-- ko template: getTemplate() -->uiComponent2 will already rush to this place <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+    <div data-bind="scope: 'uiComponent3'">
+        <!-- ko template: getTemplate() -->uiComponent3 is loading...... <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+    <div data-bind="scope: 'uiComponent4'">
+        <!-- ko template: getTemplate() -->uiComponent4 is loading...... <!-- /ko -->
+    </div>
+</div>
 
-<div data-bind="scope: 'uiComponent1'">
-    <span data-bind="text: text">uiComponent1 is loading...</span>
-</div>
-<?= $block->getChildHtml('line') ?>
-<div data-bind="scope: 'uiComponent2'">
-    <!-- ko template: getTemplate() -->uiComponent2 will already rush to this place <!-- /ko -->
-</div>
-<?= $block->getChildHtml() ?>
-<div data-bind="scope: 'uiComponent3'">
-    <!-- ko template: getTemplate() -->uiComponent3 is loading...... <!-- /ko -->
-</div>
+
 
 <!-- Приклади перекладу через байдінги -->
 <!--<div data-bind="scope: 'uiComponent1'">-->
@@ -34,7 +41,11 @@
                         "component": "Perspective_Module/js/view/uiComponent2"
                     },
                     "uiComponent3": {
-                        "component": "Perspective_Module/js/view/uiComponent3"
+                        "component": "Perspective_Module/js/view/uiComponent3",
+                        "text": "text from phtml"
+                    },
+                    "uiComponent4": {
+                        "component": "Perspective_Module/js/view/uiComponent4"
                     }
                 }
             }
