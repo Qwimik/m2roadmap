@@ -42,7 +42,7 @@ define(['uiComponent', 'ko', 'uiRegistry'], (
 
         initialize() {
             this._super();
-            console.log(this.referenceUiComponent1());
+            console.log('referenceUiComponent1: ', this.referenceUiComponent1());
         }
 
         // варіант 1 - як витягнути дані з іншого uiComponent та слідкувати за ними
