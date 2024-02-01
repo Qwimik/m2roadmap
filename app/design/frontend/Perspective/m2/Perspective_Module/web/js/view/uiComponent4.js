@@ -65,3 +65,8 @@ define(['uiComponent', 'ko', 'uiRegistry'], (
         // }
     });
 });
+
+// uiComponent - використовуємо коли очікуємо, що будуть children
+// uiComponent/uiCollection - одне й те саме
+// uiElement - якщо children 100% не буде
+// uiClass - не використовуємо (структура uiClass->uiElement=>uiComponent/uiCollection)
