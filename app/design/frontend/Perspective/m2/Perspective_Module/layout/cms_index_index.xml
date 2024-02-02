@@ -2,12 +2,21 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
+            <block name="line0" template="Perspective_Module::elements/line.phtml"/>
             <!-- ========================================================================================================= -->
             <!-- ========================================================================================================= -->
             <!-- 3. Ознайомитись з UI Components.  -->
             <block name="uiComponent.block1" template="Perspective_Module::3/uiComponents.phtml">
                 <block name="line" template="Perspective_Module::elements/line.phtml"/>
             </block>
+            <!-- uiComponent parent.child (children)  -->
+            <block name="uiComponent.block2" template="Perspective_Module::3/uiComponents-parent.phtml">
+                <block name="line1" template="Perspective_Module::elements/line.phtml"/>
+            </block>
+
         </referenceContainer>
+
+        <referenceContainer name="header.panel" remove="true"/>
+        <referenceBlock name="navigation.sections" remove="true"/>
     </body>
 </page>

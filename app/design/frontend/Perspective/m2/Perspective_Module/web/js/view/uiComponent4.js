@@ -42,7 +42,11 @@ define(['uiComponent', 'ko', 'uiRegistry'], (
 
         initialize() {
             this._super();
+            this.customMethod();
             console.log('referenceUiComponent1: ', this.referenceUiComponent1());
+        },
+        customMethod() {
+            console.log('original customMethod in uiComponent4');
         }
 
         // варіант 1 - як витягнути дані з іншого uiComponent та слідкувати за ними
