@@ -32,6 +32,9 @@
 <!--    <span data-bind="text: $t('translated %1 text').replace('%1', customVar)"></span>-->
 <!--</div>-->
 
+<!-- Для вказування залежностей компонентів, краще передавати масив deps у xml або phtml файлах, приклад у uiComponent4 -->
+<!-- Також перший компонент в масиві deps записується в provider -->
+
 <script type="text/x-magento-init">
     {
         "*": {
@@ -56,7 +59,8 @@
                         }
                     },
                     "uiComponent4": {
-                        "component": "Perspective_Module/js/view/uiComponent4"
+                        "component": "Perspective_Module/js/view/uiComponent4",
+                        "deps": ["uiComponent3"]
                     }
                 }
             }
