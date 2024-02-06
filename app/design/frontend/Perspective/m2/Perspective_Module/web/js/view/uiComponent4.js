@@ -6,11 +6,26 @@ define(['uiComponent', 'ko', 'uiRegistry'], (
     return uiComponent.extend({
         defaults: {
             template: 'Perspective_Module/uiComponent4',
+            // приклад незмінного літералу
+            test: '${$.provider}:data.items',
+            // provider - для імпорту з конкретного name компоненту
+            provider: 'uiComponent2',
             // використання import
             imports: {
                 // де textImport - нова назва змінної, uiComponent1 - повний name компоненту звідки беремо змінну, text - змінна, яку витягуємо
                 textImport: 'uiComponent1:text',
-                textObservableImport: 'uiComponent1:textObservable'
+                textObservableImport: 'uiComponent1:textObservable',
+                // за допомогою provider і літералу, можна
+                items: '${$.provider}:data.items',
+                var1: '${$.provider}:data.var1'
+            },
+            // ignoreTmpls - заставляє ігнорувати літерали
+            // Без ignoreTmpls - console.log(test) - uiComponent2:data.items;
+            // З ignoreTmpls - console.log(test) - ${$.provider}:data.items;
+            //
+            ignoreTmpls: {
+                // аналогічно, як в tracks
+                test: true
             },
             // ще є links - дозволяє зв'язувати змінні між собою і оновлювати їх в обох місцях одночасно
             // links: {
@@ -44,6 +59,10 @@ define(['uiComponent', 'ko', 'uiRegistry'], (
             this._super();
             this.customMethod();
             console.log('referenceUiComponent1: ', this.referenceUiComponent1());
+            //
+            console.log('items: ', this.items);
+            console.log('var1: ', this.var1);
+            console.log('test: ', this.test);
         },
         customMethod() {
             console.log('original customMethod in uiComponent4');
