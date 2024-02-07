@@ -24,6 +24,11 @@
         <!-- ko template: getTemplate() -->uiComponent4 is loading...... <!-- /ko -->
     </div>
     <?= $block->getChildHtml() ?>
+    <!-- this._super(), uiRegistry, import, exports, links, listens, module, ko.getObservable().subscribe(), mixin -->
+    <div data-bind="scope: 'uiComponentState'">
+        <!-- ko template: getTemplate() -->uiComponentState is loading...... <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
 </div>
 
 <!-- Приклади перекладу через байдінги -->
@@ -61,6 +66,9 @@
                     "uiComponent4": {
                         "component": "Perspective_Module/js/view/uiComponent4",
                         "deps": ["uiComponent3"]
+                    },
+                    "uiComponentState": {
+                        "component": "Perspective_Module/js/view/uiComponentState"
                     }
                 }
             }
