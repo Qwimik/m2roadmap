@@ -24,9 +24,14 @@
         <!-- ko template: getTemplate() -->uiComponent4 is loading...... <!-- /ko -->
     </div>
     <?= $block->getChildHtml() ?>
-    <!-- this._super(), uiRegistry, import, exports, links, listens, module, ko.getObservable().subscribe(), mixin -->
+    <!-- statefull -->
     <div data-bind="scope: 'uiComponentState'">
         <!-- ko template: getTemplate() -->uiComponentState is loading...... <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+    <!-- decomposition -->
+    <div data-bind="scope: 'uiComponentDecomposition'">
+        <!-- ko template: getTemplate() -->uiComponentDecomposition is loading...... <!-- /ko -->
     </div>
     <?= $block->getChildHtml() ?>
 </div>
@@ -69,6 +74,9 @@
                     },
                     "uiComponentState": {
                         "component": "Perspective_Module/js/view/uiComponentState"
+                    },
+                    "uiComponentDecomposition": {
+                        "component": "Perspective_Module/js/view/uiComponentDecomposition"
                     }
                 }
             }
