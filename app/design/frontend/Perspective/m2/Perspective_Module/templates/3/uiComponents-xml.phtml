@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ */
+?>
+<div>
+    <!-- start uiComponent, mage/translate, data-bind -->
+    <!-- Приклад виклику jsLayout в data-mage-init -->
+    <div data-mage-init='{"Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>}'
+         data-bind="scope: 'uiComponentXml'"
+    >
+        <!-- ko template: getTemplate() -->uiComponent-xml is loading...<!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+</div>
+
+<!-- Приклад виклику jsLayout структури з xml в text/x-magento-init -->
+<!--<script type="text/x-magento-init">-->
+<!--    {-->
+<!--        "*": {-->
+<!--            "Magento_Ui/js/core/app": --><?php //= $block->getJsLayout(); ?>
+<!--        }-->
+<!--    }-->
+<!--</script>-->
