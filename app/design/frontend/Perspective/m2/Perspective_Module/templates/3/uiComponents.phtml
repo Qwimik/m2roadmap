@@ -1,0 +1,85 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ */
+?>
+<div>
+    <!-- start uiComponent, mage/translate, data-bind -->
+    <div data-bind="scope: 'uiComponent1'">
+        <!-- ko template: getTemplate() -->uiComponent1 is loading...<!-- /ko -->
+    </div>
+    <?= $block->getChildHtml('line') ?>
+    <!-- ko.observable(), data-bind="mageInit... -->
+    <div data-bind="scope: 'uiComponent2'">
+        <!-- ko template: getTemplate() -->uiComponent2 will already rush to this place <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+    <!-- tracks, initObservable(), this.observe(), this.track(), initialize() -->
+    <div data-bind="scope: 'uiComponent3'">
+        <!-- ko template: getTemplate() -->uiComponent3 is loading...... <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+    <!-- this._super(), uiRegistry, import, exports, links, listens, module, ko.getObservable().subscribe(), mixin -->
+    <div data-bind="scope: 'uiComponent4'">
+        <!-- ko template: getTemplate() -->uiComponent4 is loading...... <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+    <!-- statefull -->
+    <div data-bind="scope: 'uiComponentState'">
+        <!-- ko template: getTemplate() -->uiComponentState is loading...... <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+    <!-- decomposition -->
+    <div data-bind="scope: 'uiComponentDecomposition'">
+        <!-- ko template: getTemplate() -->uiComponentDecomposition is loading...... <!-- /ko -->
+    </div>
+    <?= $block->getChildHtml() ?>
+</div>
+
+<!-- Приклади перекладу через байдінги -->
+<!--<div data-bind="scope: 'uiComponent1'">-->
+<!--    <span data-bind="i18n: 'translated text'"></span>-->
+<!--    <span data-bind="text: $t('translated %1 text').replace('%1', customVar)"></span>-->
+<!--</div>-->
+
+<!-- Для вказування залежностей компонентів, краще передавати масив deps у xml або phtml файлах, приклад у uiComponent4 -->
+<!-- Також перший компонент в масиві deps записується в provider -->
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "uiComponent1": {
+                        "component": "Perspective_Module/js/view/uiComponent1"
+                    },
+                    "uiComponent2": {
+                        "component": "Perspective_Module/js/view/uiComponent2",
+                        "data": {
+                            "items": ["item1", "item2"],
+                            "var1": "value1 from var1 from uiComponent2"
+                        }
+                    },
+                    "uiComponent3": {
+                        "component": "Perspective_Module/js/view/uiComponent3",
+                        "text": "text from phtml",
+                        "data": {
+                            "items": ["item3", "item4"],
+                            "var1": "value2 from var1 from uiComponent3"
+                        }
+                    },
+                    "uiComponent4": {
+                        "component": "Perspective_Module/js/view/uiComponent4",
+                        "deps": ["uiComponent3"]
+                    },
+                    "uiComponentState": {
+                        "component": "Perspective_Module/js/view/uiComponentState"
+                    },
+                    "uiComponentDecomposition": {
+                        "component": "Perspective_Module/js/view/uiComponentDecomposition"
+                    }
+                }
+            }
+        }
+    }
+</script>

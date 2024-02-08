@@ -1,0 +1,20 @@
+<div>
+    <h2>uiComponent-parent</h2>
+    <!-- Додаємо uiComponent динамічно. Використовуємо власний метод addChild -->
+    <button data-bind="click: addChild">Add child</button>
+    <!-- Видаляємо всі child компоненти вже існуючим методом destroyChildren -->
+    <button data-bind="click: destroyChildren">Remove all</button>
+    <!-- Без getRegion() -->
+<!--    <ul style="flex-grow: 1" data-bind="foreach: elems">-->
+<!--        &lt;!&ndash; ko template: getTemplate() &ndash;&gt;&lt;!&ndash; /ko &ndash;&gt;-->
+<!--    </ul>-->
+    <!-- з getRegion() -->
+    <div style="display: flex">
+        <ul style="flex-grow: 1" data-bind="foreach: getRegion('left')">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </ul>
+        <ul style="flex-grow: 1" data-bind="foreach: getRegion('right')">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </ul>
+    </div>
+</div>
