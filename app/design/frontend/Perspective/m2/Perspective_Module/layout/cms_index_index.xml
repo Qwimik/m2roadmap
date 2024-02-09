@@ -47,6 +47,11 @@
                 </arguments>
                 <!-- Після чого в темплейті викликаємо jsLayout -->
             </block>
+
+            <!-- jquery ui widgets -->
+            <block name="jqUiWidgets.block" template="Perspective_Module::4/jqUiWidgets.phtml">
+                <block name="line3" template="Perspective_Module::elements/line.phtml"/>
+            </block>
         </referenceContainer>
 
         <referenceContainer name="header.panel" remove="true"/>
