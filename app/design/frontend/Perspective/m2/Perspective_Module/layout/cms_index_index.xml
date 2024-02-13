@@ -6,49 +6,49 @@
             <!-- ========================================================================================================= -->
             <!-- ========================================================================================================= -->
             <!-- 3. Ознайомитись з UI Components.  -->
-            <block name="uiComponent.block1" template="Perspective_Module::3/uiComponents.phtml">
-                <block name="line" template="Perspective_Module::elements/line.phtml"/>
-            </block>
+<!--            <block name="uiComponent.block1" template="Perspective_Module::3/uiComponents.phtml">-->
+<!--                <block name="line" template="Perspective_Module::elements/line.phtml"/>-->
+<!--            </block>-->
             <!-- uiComponent parent.child (children)  -->
-            <block name="uiComponent.block2" template="Perspective_Module::3/uiComponents-parent.phtml">
-                <block name="line1" template="Perspective_Module::elements/line.phtml"/>
-            </block>
+<!--            <block name="uiComponent.block2" template="Perspective_Module::3/uiComponents-parent.phtml">-->
+<!--                <block name="line1" template="Perspective_Module::elements/line.phtml"/>-->
+<!--            </block>-->
             <!-- uiComponent in XML  -->
-            <block name="uiComponent.block3" template="Perspective_Module::3/uiComponents-xml.phtml">
-                <block name="line2" template="Perspective_Module::elements/line.phtml"/>
-                <!-- Структура оголошення схожа на text/x-magento-init, але вкладеність оголошуємо item -->
-                <arguments>
-                    <!-- Обов'язковий аргумент jsLayout -->
-                    <argument name="jsLayout" xsi:type="array">
-                        <!-- Далі в argument використовують item -->
-                        <!-- xsi:type - тип з php (не з js) -->
-                        <item name="components" xsi:type="array">
-                            <item name="uiComponentXml" xsi:type="array">
-                                <item name="component" xsi:type="string">Perspective_Module/js/view/uiComponent-xml</item>
-                                <item name="template" xsi:type="string">Perspective_Module/uiComponent-xml</item>
-<!--                                <item name="deps" xsi:type="array">-->
-<!--                                    <item name="0" xsi:type="string">customDep0</item>-->
-<!--                                    <item name="1" xsi:type="string">customDep1</item>-->
-<!--                                </item>-->
-<!--                                <item name="imports" xsi:type="array">-->
-<!--                                    <item name="text" xsi:type="string">customImportText</item>-->
-<!--                                    &lt;!&ndash; Прикллад передачі літералу в xml &ndash;&gt;-->
-<!--                                    <item name="items" xsi:type="string"><![CDATA[${$.provider}:data.items]]></item>-->
-<!--                                </item>-->
-                                <!-- Ще є додатковий config в якому, передані дані мають більший пріоритет (не будуть перезаписані) -->
-                                <!-- наприклад template не можна буде перевизначити -->
-                                <!-- Але можна передати вкладеність config->template і тоді він буде перезаписаний -->
-<!--                                <item name="config" xsi:type="array">-->
-<!--                                    <item name="template" xsi:type="string">Perspective_Module/uiComponent-xml</item>-->
-<!--                                </item>-->
-                            </item>
-                        </item>
-                    </argument>
-                </arguments>
-                <!-- Після чого в темплейті викликаємо jsLayout -->
-            </block>
+<!--            <block name="uiComponent.block3" template="Perspective_Module::3/uiComponents-xml.phtml">-->
+<!--                <block name="line2" template="Perspective_Module::elements/line.phtml"/>-->
+<!--                &lt;!&ndash; Структура оголошення схожа на text/x-magento-init, але вкладеність оголошуємо item &ndash;&gt;-->
+<!--                <arguments>-->
+<!--                    &lt;!&ndash; Обов'язковий аргумент jsLayout &ndash;&gt;-->
+<!--                    <argument name="jsLayout" xsi:type="array">-->
+<!--                        &lt;!&ndash; Далі в argument використовують item &ndash;&gt;-->
+<!--                        &lt;!&ndash; xsi:type - тип з php (не з js) &ndash;&gt;-->
+<!--                        <item name="components" xsi:type="array">-->
+<!--                            <item name="uiComponentXml" xsi:type="array">-->
+<!--                                <item name="component" xsi:type="string">Perspective_Module/js/view/uiComponent-xml</item>-->
+<!--                                <item name="template" xsi:type="string">Perspective_Module/uiComponent-xml</item>-->
+<!--&lt;!&ndash;                                <item name="deps" xsi:type="array">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <item name="0" xsi:type="string">customDep0</item>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <item name="1" xsi:type="string">customDep1</item>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </item>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <item name="imports" xsi:type="array">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <item name="text" xsi:type="string">customImportText</item>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    &lt;!&ndash; Прикллад передачі літералу в xml &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <item name="items" xsi:type="string"><![CDATA[${$.provider}:data.items]]></item>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </item>&ndash;&gt;-->
+<!--                                &lt;!&ndash; Ще є додатковий config в якому, передані дані мають більший пріоритет (не будуть перезаписані) &ndash;&gt;-->
+<!--                                &lt;!&ndash; наприклад template не можна буде перевизначити &ndash;&gt;-->
+<!--                                &lt;!&ndash; Але можна передати вкладеність config->template і тоді він буде перезаписаний &ndash;&gt;-->
+<!--&lt;!&ndash;                                <item name="config" xsi:type="array">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <item name="template" xsi:type="string">Perspective_Module/uiComponent-xml</item>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </item>&ndash;&gt;-->
+<!--                            </item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--                &lt;!&ndash; Після чого в темплейті викликаємо jsLayout &ndash;&gt;-->
+<!--            </block>-->
 
-            <!-- jquery ui widgets -->
+            <!-- 4. jquery ui widgets -->
             <block name="jqUiWidgets.block" template="Perspective_Module::4/jqUiWidgets.phtml">
                 <block name="line3" template="Perspective_Module::elements/line.phtml"/>
             </block>

@@ -8,11 +8,11 @@
     <!-- jquery ui widgets -->
     <h2><?= $escaper->escapeHtml(__('JQuery ui widgets')) ?></h2>
     <!-- звернення до скрипту, який викликає віджет -->
-    <div data-mage-init='{"Perspective_Module/js/jquery/custom-script1": {}}'></div>
+<!--    <div data-mage-init='{"Perspective_Module/js/jquery/custom-script1": {}}'></div>-->
     <!-- звернення одразу до віджету, дозволяє передавати змінні з phtml в options -->
     <!-- при такому зверненні, create та init будуть викликатись по 1 разу кожний (через скрипт create 1 раз, init кожний) -->
-    <div data-mage-init='{"Perspective_Module/js/jquery/custom-jquery1": { "customText": "FROM phtml text (data-mage-init)" }}'></div>
+<!--    <div data-mage-init='{"Perspective_Module/js/jquery/custom-jquery1": { "customText": "FROM phtml text (data-mage-init)" }}'></div>-->
+    <!-- events -->
+    <button data-mage-init='{"Perspective_Module/js/jquery/events-script": {}}'>Click click</button>
     <?= $block->getChildHtml() ?>
 </div>
-
-
