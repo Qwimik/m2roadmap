@@ -6,6 +6,7 @@
 ?>
 <div>
     <!-- jquery ui widgets -->
+    <!-- Instantiating jQuery UI Widgets e.g. JavaScript form validation -->
     <h2><?= $escaper->escapeHtml(__('JQuery ui widgets')) ?></h2>
     <!-- звернення до скрипту, який викликає віджет -->
 <!--    <div data-mage-init='{"Perspective_Module/js/jquery/custom-script1": {}}'></div>-->
@@ -13,6 +14,106 @@
     <!-- при такому зверненні, create та init будуть викликатись по 1 разу кожний (через скрипт create 1 раз, init кожний) -->
 <!--    <div data-mage-init='{"Perspective_Module/js/jquery/custom-jquery1": { "customText": "FROM phtml text (data-mage-init)" }}'></div>-->
     <!-- events -->
-    <button data-mage-init='{"Perspective_Module/js/jquery/events-script": {}}'>Click click</button>
+<!--    <button data-mage-init='{"Perspective_Module/js/jquery/events-script": {}}'>Click click</button>-->
+    <!-- collapsible widget inline example -->
+        <!-- Introduction to the collapsible jQuery UI Widget -->
+        <!-- Persisting the state of a collapsible jQuery UI Widget -->
+        <!-- Make a collapsible jQuery UI Widget open by default -->
+    <div data-mage-init='{
+        "collapsible":{
+            "collapsible": true,
+            "openedState": "active",
+            "active": true
+        }}'
+    >
+        <h3>Inline example</h3>
+        <div data-role="title" style="cursor: pointer">
+            <h4>Fruit</h4>
+        </div>
+        <div data-role="content">
+            <ul>
+                <li>Orange</li>
+                <li>Apple</li>
+                <li>Banana</li>
+            </ul>
+        </div>
+    </div>
+    <div data-mage-init='{ "collapsible":{} }'>
+        <div data-role="title" style="cursor: pointer">
+            <h4>Exams</h4>
+        </div>
+        <div data-role="content">
+            <ul>
+                <li>Maths</li>
+                <li>English</li>
+                <li>Science</li>
+            </ul>
+        </div>
+    </div>
+    <?= $block->getChildHtml() ?>
+    <!-- example validation form -->
+    <h3>Example validation</h3>
+    <form data-mage-init='{"validation": {}, "Perspective_Module/js/jquery/form-script": {}}'>
+        <fieldset class="fieldset">
+            <div class="field required">
+                <label for="customInput" class="label">Ukrainian phone number</label>
+                <div class="control">
+                    <input type="text"
+                           id="customInput"
+                           class="text-input"
+                           data-validate='{required: true, "validate-phone-number": true}'
+                    />
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary">Check number</button>
+            </div>
+        </div>
+    </form>
+    <?= $block->getChildHtml() ?>
+    <!-- example with js file (---Introduction to the collapsible jQuery UI Widget)-->
+    <div data-mage-init='{"Perspective_Module/js/jquery/custom-collapsible": {}}'>
+        <h3>Example with Js file - custom-collapsible</h3>
+        <div data-role="title" style="cursor: pointer">
+            <h4>Click me</h4>
+        </div>
+        <div data-role="content">
+            <ul>
+                <li>Ma..</li>
+                <li>....gi....</li>
+                <li>........c!</li>
+                <li data-mage-init='{"Perspective_Module/js/jquery/custom-collapsible": {}}'>
+                    <div data-role="title" style="cursor: pointer">
+                        <h4>Exams</h4>
+                    </div>
+                    <div data-role="content">
+                        <ul>
+                            <li>Maths</li>
+                            <li>English</li>
+                            <li>Science</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <?= $block->getChildHtml() ?>
+    <!-- Loading the content for a collapsible jQuery UI Widget via Ajax -->
+    <!-- Including dynamic JavaScript in the content loaded by Ajax in a jQuery UI Widget -->
+    <div data-mage-init='{"Perspective_Module/js/jquery/custom-ajaxContent": {"ajaxContent": "true"}}'>
+        <button type="button" data-role="title">Show your pokemon</button>
+        <div id="pokemon-content" data-role="content"><p>Loading...</p></div>
+    </div>
+    <div id="custom"></div>
+    <?= $block->getChildHtml() ?>
+    <h2>Jquery widget mixins</h2>
+    <!-- example function mixin -->
+<!--    <div data-mage-init='{"Perspective_Module/js/custom-function": {"a": 1}}'></div>-->
+    <!-- example object js -->
+<!--    <div data-mage-init='{"Perspective_Module/js/custom-script": {}}'></div>-->
+    <!-- example widget mixin -->
+<!--    <div data-mage-init='{"Perspective_Module/js/custom-widget": {}}'></div>-->
     <?= $block->getChildHtml() ?>
 </div>
