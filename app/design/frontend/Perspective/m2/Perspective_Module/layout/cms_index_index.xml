@@ -54,7 +54,7 @@
             </block>
         </referenceContainer>
 
-        <referenceContainer name="header.panel" remove="true"/>
+        <referenceContainer name="header.panel" remove="false"/>
         <referenceBlock name="navigation.sections" remove="true"/>
     </body>
 </page>
