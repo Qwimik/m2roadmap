@@ -27,11 +27,9 @@ $createAccountButtonViewModel = $block->getData('create_account_button_view_mode
 <form class="form create account form-create-account"
       action="<?= $escaper->escapeUrl($block->getPostActionUrl()) ?>"
       method="post"
-      id="form-validate"
       enctype="multipart/form-data"
       autocomplete="off"
-      data-mage-init="{'validation': {'rules': {'firstname': {'validate-firstname': true}, 'lastname': {'validate-firstname': true}}}}, 'Magento_Customer/js/account-form/custom-form': {}}"
->
+      data-mage-init='{"validation":{}, "Magento_Customer/js/account-form/custom-form":{}}'>
     <?= /* @noEscape */ $block->getBlockHtml('formkey') ?>
     <fieldset class="fieldset create info">
         <legend class="legend"><span><?= $escaper->escapeHtml(__('Personal Information')) ?></span></legend><br>
@@ -242,7 +240,7 @@ $createAccountButtonViewModel = $block->getData('create_account_button_view_mode
                        value="<?= $escaper->escapeHtmlAttr($formData->getEmail()) ?>"
                        title="<?= $escaper->escapeHtmlAttr(__('Email')) ?>"
                        class="input-text"
-                       data-mage-init='{"mage/trim-input":{}}'
+                       data-mage-init='{"Magento_Customer/js/account-form/custom-validation-field":{"rule":"email"}}'
                        data-validate="{required:true, 'validate-email':true}">
             </div>
         </div>

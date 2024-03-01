@@ -19,7 +19,7 @@ $loginButtonViewModel = $block->getData('login_button_view_model');
               action="<?= $block->escapeUrl($block->getPostActionUrl()) ?>"
               method="post"
               id="login-form"
-              data-mage-init='{"validation":{}, "Magento_Customer/js/account-form/custom-form": {}}'>
+              data-mage-init='{"validation": {}, "Magento_Customer/js/account-form/custom-form": {}}'>
             <?= $block->getBlockHtml('formkey') ?>
             <fieldset class="fieldset login" data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>">
                 <div class="field note"><?= $block->escapeHtml(__('If you have an account, sign in with your email address.')) ?></div>
@@ -30,8 +30,8 @@ $loginButtonViewModel = $block->getData('login_button_view_model');
                             <?php if ($block->isAutocompleteDisabled()): ?> autocomplete="off"<?php endif; ?>
                                id="email" type="email" class="input-text"
                                title="<?= $block->escapeHtmlAttr(__('Email')) ?>"
-                               data-mage-init='{"mage/trim-input":{}}'
-                               data-validate="{required:true, 'validate-email':true}">
+                               data-mage-init='{"Magento_Customer/js/account-form/custom-validation-field":{}}'
+                               data-validate='{"required":true, "custom-validate-email":true}'>
                     </div>
                 </div>
                 <div class="field password required">
