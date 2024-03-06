@@ -11,3 +11,5 @@
 /vendor/*
 auth.json
 app/etc/hyva-themes.json
+app/etc/config.php
+app/etc/env.php
