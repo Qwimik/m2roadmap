@@ -19,7 +19,7 @@ $loginButtonViewModel = $block->getData('login_button_view_model');
               action="<?= $block->escapeUrl($block->getPostActionUrl()) ?>"
               method="post"
               id="login-form"
-              data-mage-init='{"validation": {}, "Magento_Customer/js/account-form/custom-form": {}}'>
+              data-mage-init='{"validation": {}, "Magento_Customer/js/account-form/custom-form":{}}'>
             <?= $block->getBlockHtml('formkey') ?>
             <fieldset class="fieldset login" data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>">
                 <div class="field note"><?= $block->escapeHtml(__('If you have an account, sign in with your email address.')) ?></div>

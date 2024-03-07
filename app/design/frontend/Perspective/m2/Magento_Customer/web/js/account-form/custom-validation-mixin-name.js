@@ -1,9 +1,13 @@
-define(['jquery', 'mage/translate', 'jquery/ui', 'jquery/validate'], ($, $t) => {
+define(['jquery'], ($) => {
     return function (targetWidget) {
+        console.log(targetWidget);
         $.validator.addMethod(
-            'custom-validate-name',
-            (value) => /^[a-zA-Z\-]+$/.test(value),
-            $t('Firstname or Lastname can contain only Latin letters and -')
+            'custom-validation-name',
+            function(value,element) {
+                console.log(value)
+                return /^[a-zA-Z\-]+$/.test(value)
+            },
+            $.mage.__('Firstname or Lastname can contain only Latin letters and \"-\"')
         );
         return targetWidget;
     }

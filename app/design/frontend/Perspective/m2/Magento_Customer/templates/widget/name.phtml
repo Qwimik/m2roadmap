@@ -73,7 +73,7 @@ $suffix = $block->showSuffix();
             <div class="control">
                 <input type="text" id="<?= $block->escapeHtmlAttr($block->getFieldId('firstname')) ?>"
                        data-mage-init='{"Magento_Customer/js/account-form/custom-validation-field": {}}'
-                       data-validate='{required:true, "custom-validation-name": true}'
+                       data-validate='{required:true, "custom-validation-name":true}'
                        name="<?= $block->escapeHtmlAttr($block->getFieldName('firstname')) ?>"
                        value="<?= $block->escapeHtmlAttr($block->getObject()->getFirstname()) ?>"
                        title="<?= $block->escapeHtmlAttr($block->getStoreLabel('firstname')) ?>"

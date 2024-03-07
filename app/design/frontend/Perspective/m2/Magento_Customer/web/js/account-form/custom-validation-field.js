@@ -4,15 +4,14 @@ define(['jquery', 'validation', 'jquery-ui-modules/widget'], ($) => {
             this._on(this.element, {
                 input: this.onChange.bind(this)
             });
-
+            $(this.element).validation();
         },
         onChange() {
-            $(this.element).validation();
             if (!this.element.validation('isValid')) {
-                console.log('Form is not valid');
+                console.log('Field is not valid');
                 $(this.element).removeClass('valid-success').addClass('mage-error');
             } else {
-                console.log('Form is valid!!! Great!');
+                console.log('Field is valid!!! Great!');
                 $(this.element).removeClass('mage-error').addClass('valid-success');
             }
         },
