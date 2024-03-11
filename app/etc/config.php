@@ -353,6 +353,7 @@ return [
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Perspective_Module' => 1,
+        'Perspective_RegisterCheckout' => 1,
         'Temando_ShippingRemover' => 1
     ]
 ];
