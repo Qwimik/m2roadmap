@@ -108,6 +108,6 @@ module.exports = function (grunt) {
         grunt.registerTask(name, task);
     });
 
-    grunt.registerTask('compile', ['clean:rozhnenko', 'exec:rozhnenko', 'less:rozhnenko']);
+    grunt.registerTask('compile', ['clean:m2', 'exec:m2', 'less:m2']);
     grunt.registerTask('default', ['compile', 'watch']);
 };
