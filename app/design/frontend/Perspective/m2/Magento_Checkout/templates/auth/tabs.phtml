@@ -1,0 +1,38 @@
+<div class="product data items"
+     data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}}}'
+>
+    <div class="item title" data-role="collapsible">
+        <button class="switch" data-toggle="trigger" type="button" id="buttonLogin">Login</button>
+    </div>
+    <div id="tab-login" class="item content" data-role="content">
+        <?= $block->getChildHtml('login-form') ?>
+    </div>
+
+    <div class="item title" data-role="collapsible">
+        <button class="switch" data-toggle="trigger" type="button" id="buttonRegister">Register</button>
+    </div>
+    <div id="tab-register" class="item content" data-role="content">
+        <?= $block->getChildHtml('register-form') ?>
+    </div>
+</div>
+<?= $block->getChildHtml('form_additional_info_customer') ?>
+
+<script>
+    const btnLogin = document.getElementById('buttonLogin');
+    const btnRegister = document.getElementById('buttonRegister');
+    document.getElementById('tab-login').style.display = 'none';
+    btnRegister.classList.add('custom-active-button');
+
+    btnLogin.addEventListener('click', () => {
+        document.getElementById('tab-login').style.display = 'block';
+        document.getElementById('tab-register').style.display = 'none';
+        btnRegister.classList.remove('custom-active-button');
+        btnLogin.classList.add('custom-active-button');
+    })
+    btnRegister.addEventListener('click', () => {
+        document.getElementById('tab-login').style.display = 'none';
+        document.getElementById('tab-register').style.display = 'block';
+        btnLogin.classList.remove('custom-active-button');
+        btnRegister.classList.add('custom-active-button');
+    })
+</script>
